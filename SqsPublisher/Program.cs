@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-
+using Amazon;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 
@@ -7,7 +7,7 @@ using SqsPublisher;
 
 const string CustomersQueueName = "customers";
 
-var sqsClient = new AmazonSQSClient();
+var sqsClient = new AmazonSQSClient(RegionEndpoint.USEast1);
 
 var customer = new CustomerCreated()
 {
