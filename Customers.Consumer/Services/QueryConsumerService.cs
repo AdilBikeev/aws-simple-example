@@ -1,7 +1,9 @@
-﻿using Amazon.SQS;
+﻿using System.Text.Json;
+using Amazon.SQS;
 using Amazon.SQS.Model;
 using Customers.Consumer.Messages;
 using Customers.Consumer.Settings;
+using MediatR;
 using Microsoft.Extensions.Options;
 
 namespace Customers.Consumer.Services;
@@ -9,15 +11,21 @@ namespace Customers.Consumer.Services;
 public class QueryConsumerService : BackgroundService
 {
     private readonly IAmazonSQS _sqs;
+    private readonly IMediator _mediator;
     private readonly IOptions<QueueSettings> _queueSettings;
+    private readonly ILogger<QueryConsumerService> _logger;
     private string? _queueUrl;
     
     public QueryConsumerService(
         IAmazonSQS sqs,
-        IOptions<QueueSettings> queueSettings)
+        IMediator mediator,
+        IOptions<QueueSettings> queueSettings,
+        ILogger<QueryConsumerService> logger)
     {
         _sqs = sqs;
+        _mediator = mediator;
         _queueSettings = queueSettings;
+        _logger = logger;
     }
     
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -35,11 +43,24 @@ public class QueryConsumerService : BackgroundService
             foreach (var message in recieveMessage.Messages)
             {
                 var messageType = message.MessageAttributes["MessageType"].StringValue;
-                switch (messageType)
+                var type = Type.GetType($"Customers.Consumer.Messages.{messageType}");
+                
+                if (type is null)
                 {
-                    case nameof(CustomerCreated):
-                        Console.WriteLine(message.Body);
-                        break;
+                    _logger.LogWarning("Unknown message type: {MessageType}", messageType);
+                    await _sqs.DeleteMessageAsync(queueUrl, message.ReceiptHandle, stoppingToken);
+                    continue;
+                }
+
+                var body = JsonSerializer.Deserialize(message.Body, type);
+
+                try
+                {
+                    await _mediator.Send(body, stoppingToken);
+                }
+                catch (Exception exception)
+                {
+                    _logger.LogError(exception.ToString());
                 }
                 
                 await _sqs.DeleteMessageAsync(queueUrl, message.ReceiptHandle, stoppingToken);
