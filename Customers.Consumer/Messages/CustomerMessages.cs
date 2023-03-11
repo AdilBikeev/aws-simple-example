@@ -1,6 +1,8 @@
-﻿namespace Customers.Consumer.Messages;
+﻿using MediatR;
 
-public class CustomerCreated
+namespace Customers.Consumer.Messages;
+
+public class CustomerCreated : ISQSMessage
 {
     public Guid Id { get; init; }
 
@@ -13,7 +15,7 @@ public class CustomerCreated
     public DateTime DateOfBirth { get; init; }
 }
 
-public class CustomerUpdated
+public class CustomerUpdated : ISQSMessage
 {
     public Guid Id { get; init; }
 
@@ -26,7 +28,7 @@ public class CustomerUpdated
     public DateTime DateOfBirth { get; init; }
 }
 
-public class CustomerDeleted
+public class CustomerDeleted : ISQSMessage
 {
     public Guid Id { get; init; }
 }
