@@ -1,4 +1,4 @@
-using Amazon.SQS;
+using Amazon.SimpleNotificationService;
 using Customers.Api.Database;
 using Customers.Api.Messaging;
 using Customers.Api.Repositories;
@@ -11,8 +11,8 @@ var config = builder.Configuration;
 config.AddEnvironmentVariables("CustomersApi_");
 
 // Add services to the container.
-builder.Services.Configure<QueueSettings>(builder.Configuration.GetSection(QueueSettings.Key));
-builder.Services.AddSingleton<IAmazonSQS, AmazonSQSClient>();
+builder.Services.Configure<TopicSettings>(builder.Configuration.GetSection(TopicSettings.Key));
+builder.Services.AddSingleton<IAmazonSimpleNotificationService, AmazonSimpleNotificationServiceClient>();
 builder.Services.AddSingleton<ISqsMessenger, SqsMessenger>();
 
 builder.Services.AddSingleton<ICustomerRepository, CustomerRepository>();
