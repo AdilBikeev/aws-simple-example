@@ -25,7 +25,8 @@ public class CustomerRepository : ICustomerRepository
         var putItemRequest = new PutItemRequest()
         {
             TableName = TableName,
-            Item = customerAsAttributes
+            Item = customerAsAttributes,
+            ConditionExpression = "attribute_not_exist(pk) and attribute_not_exist(sk)"
         };
 
         var response = await _dynamoDb.PutItemAsync(putItemRequest);
