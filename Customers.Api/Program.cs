@@ -1,3 +1,4 @@
+using Amazon.DynamoDBv2;
 using Amazon.SimpleNotificationService;
 using Customers.Api.Database;
 using Customers.Api.Messaging;
@@ -14,6 +15,7 @@ config.AddEnvironmentVariables("CustomersApi_");
 builder.Services.Configure<TopicSettings>(builder.Configuration.GetSection(TopicSettings.Key));
 builder.Services.AddSingleton<IAmazonSimpleNotificationService, AmazonSimpleNotificationServiceClient>();
 builder.Services.AddSingleton<ISqsMessenger, SqsMessenger>();
+builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
 
 builder.Services.AddSingleton<ICustomerRepository, CustomerLocalRepository>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
