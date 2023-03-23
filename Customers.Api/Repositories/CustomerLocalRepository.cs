@@ -4,11 +4,11 @@ using Dapper;
 
 namespace Customers.Api.Repositories;
 
-public class CustomerRepository : ICustomerRepository
+public class CustomerLocalRepository : ICustomerRepository
 {
     private readonly IDbConnectionFactory _connectionFactory;
 
-    public CustomerRepository(IDbConnectionFactory connectionFactory)
+    public CustomerLocalRepository(IDbConnectionFactory connectionFactory)
     {
         _connectionFactory = connectionFactory;
     }

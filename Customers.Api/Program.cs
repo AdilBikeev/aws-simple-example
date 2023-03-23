@@ -15,7 +15,7 @@ builder.Services.Configure<TopicSettings>(builder.Configuration.GetSection(Topic
 builder.Services.AddSingleton<IAmazonSimpleNotificationService, AmazonSimpleNotificationServiceClient>();
 builder.Services.AddSingleton<ISqsMessenger, SqsMessenger>();
 
-builder.Services.AddSingleton<ICustomerRepository, CustomerRepository>();
+builder.Services.AddSingleton<ICustomerRepository, CustomerLocalRepository>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddSingleton<IGitHubService, GitHubService>();
 
