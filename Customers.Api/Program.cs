@@ -17,7 +17,11 @@ builder.Services.AddSingleton<IAmazonSimpleNotificationService, AmazonSimpleNoti
 builder.Services.AddSingleton<ISqsMessenger, SqsMessenger>();
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
 
+// Repositories
 builder.Services.AddSingleton<ICustomerRepository, CustomerLocalRepository>();
+
+// Services
+builder.Services.AddSingleton<ICustomerImageService, CustomerImageService>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddSingleton<IGitHubService, GitHubService>();
 
