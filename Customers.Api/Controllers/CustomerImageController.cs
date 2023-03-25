@@ -39,7 +39,5 @@ public class CustomerImageController : ControllerBase
         {
             return NotFound();
         }
-
-        return BadRequest();
     }
 }
