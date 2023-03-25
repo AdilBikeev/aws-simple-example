@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.Api", "Customers.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnsPublisher", "SnsPublisher\SnsPublisher.csproj", "{A596B58A-C1F4-4D52-99FA-649E895196E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S3Playground", "S3Playground\S3Playground.csproj", "{D2AFD43A-7833-4C5F-9834-BD8A7C0FE84A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A596B58A-C1F4-4D52-99FA-649E895196E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A596B58A-C1F4-4D52-99FA-649E895196E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A596B58A-C1F4-4D52-99FA-649E895196E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2AFD43A-7833-4C5F-9834-BD8A7C0FE84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2AFD43A-7833-4C5F-9834-BD8A7C0FE84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2AFD43A-7833-4C5F-9834-BD8A7C0FE84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2AFD43A-7833-4C5F-9834-BD8A7C0FE84A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
