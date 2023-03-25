@@ -30,4 +30,15 @@ public class CustomerImageService : ICustomerImageService
 
         return response;
     }
+
+    public async Task<GetObjectResponse> GetImageAsync(Guid id)
+    {
+        var response = await _amazonS3.GetObjectAsync(new GetObjectRequest()
+        {
+            BucketName = bucketName,
+            Key = $"images/{id}"
+        });
+
+        return response;
+    }
 }
