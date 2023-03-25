@@ -41,4 +41,15 @@ public class CustomerImageService : ICustomerImageService
 
         return response;
     }
+
+    public async Task<DeleteObjectResponse> DeleteImageAsync(Guid id)
+    {
+        var response = await _amazonS3.DeleteObjectAsync(new DeleteObjectRequest()
+        {
+            BucketName = bucketName,
+            Key = $"images/{id}"
+        });
+
+        return response;
+    }
 }
