@@ -1,4 +1,5 @@
 using Amazon.DynamoDBv2;
+using Amazon.S3;
 using Amazon.SimpleNotificationService;
 using Customers.Api.Database;
 using Customers.Api.Messaging;
@@ -16,14 +17,18 @@ builder.Services.Configure<TopicSettings>(builder.Configuration.GetSection(Topic
 builder.Services.AddSingleton<IAmazonSimpleNotificationService, AmazonSimpleNotificationServiceClient>();
 builder.Services.AddSingleton<ISqsMessenger, SqsMessenger>();
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
+builder.Services.AddSingleton<IAmazonS3, AmazonS3Client>();
 
 // Repositories
-builder.Services.AddSingleton<ICustomerRepository, CustomerLocalRepository>();
+//builder.Services.AddSingleton<ICustomerRepository, CustomerLocalRepository>();
+builder.Services.AddSingleton<IDbConnectionFactory, SqliteConnectionFactory>();
+builder.Services.AddSingleton<ICustomerRepository, CustomerRepository>();
 
 // Services
 builder.Services.AddSingleton<ICustomerImageService, CustomerImageService>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddSingleton<IGitHubService, GitHubService>();
+builder.Services.AddSingleton<DatabaseInitializer>();
 
 builder.Services.AddHttpClient("GitHub", httpClient =>
 {

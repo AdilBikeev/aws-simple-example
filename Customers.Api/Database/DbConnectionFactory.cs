@@ -10,16 +10,15 @@ public interface IDbConnectionFactory
 
 public class SqliteConnectionFactory : IDbConnectionFactory
 {
-    private readonly string _connectionString;
+    private const string ConnectionString = "Data Source=./customers.db";
 
-    public SqliteConnectionFactory(string connectionString)
+    public SqliteConnectionFactory()
     {
-        _connectionString = connectionString;
     }
 
     public async Task<IDbConnection> CreateConnectionAsync()
     {
-        var connection = new SqliteConnection(_connectionString);
+        var connection = new SqliteConnection(ConnectionString);
         await connection.OpenAsync();
         return connection;
     }
