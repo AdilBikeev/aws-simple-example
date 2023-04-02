@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnsPublisher", "SnsPublishe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S3Playground", "S3Playground\S3Playground.csproj", "{D2AFD43A-7833-4C5F-9834-BD8A7C0FE84A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecretManager", "SecretManager\SecretManager.csproj", "{E88B2B6C-27DB-4289-8F7B-5B4C26FFC0AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{D2AFD43A-7833-4C5F-9834-BD8A7C0FE84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2AFD43A-7833-4C5F-9834-BD8A7C0FE84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2AFD43A-7833-4C5F-9834-BD8A7C0FE84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E88B2B6C-27DB-4289-8F7B-5B4C26FFC0AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E88B2B6C-27DB-4289-8F7B-5B4C26FFC0AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E88B2B6C-27DB-4289-8F7B-5B4C26FFC0AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E88B2B6C-27DB-4289-8F7B-5B4C26FFC0AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
