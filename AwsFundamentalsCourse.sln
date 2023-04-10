@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSqsLambda", "SimpleSq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSnsLambda", "SimpleSnsLambda\src\SimpleSnsLambda\SimpleSnsLambda.csproj", "{E620E9B4-459E-400C-9D73-A052C439A323}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDynamoDBLambda", "SimpleDynamoDBLambda\src\SimpleDynamoDBLambda\SimpleDynamoDBLambda.csproj", "{94EAB4F9-B98C-41C3-BC2A-A3948A6C0BE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleS3Lambda", "SimpleS3Lambda\src\SimpleS3Lambda\SimpleS3Lambda.csproj", "{0066EB15-C122-4F38-80E7-DB375ED0454D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +95,14 @@ Global
 		{E620E9B4-459E-400C-9D73-A052C439A323}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E620E9B4-459E-400C-9D73-A052C439A323}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E620E9B4-459E-400C-9D73-A052C439A323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94EAB4F9-B98C-41C3-BC2A-A3948A6C0BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94EAB4F9-B98C-41C3-BC2A-A3948A6C0BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94EAB4F9-B98C-41C3-BC2A-A3948A6C0BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94EAB4F9-B98C-41C3-BC2A-A3948A6C0BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0066EB15-C122-4F38-80E7-DB375ED0454D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0066EB15-C122-4F38-80E7-DB375ED0454D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0066EB15-C122-4F38-80E7-DB375ED0454D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0066EB15-C122-4F38-80E7-DB375ED0454D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +117,8 @@ Global
 		{E88B2B6C-27DB-4289-8F7B-5B4C26FFC0AA} = {3C6A2F56-5023-436A-A963-500B603129D0}
 		{60ABADA5-CF84-4C2D-B2E4-CDA3261E6595} = {EC138916-C050-47CC-9E86-EF35E8E69F34}
 		{E620E9B4-459E-400C-9D73-A052C439A323} = {EC138916-C050-47CC-9E86-EF35E8E69F34}
+		{94EAB4F9-B98C-41C3-BC2A-A3948A6C0BE4} = {EC138916-C050-47CC-9E86-EF35E8E69F34}
+		{0066EB15-C122-4F38-80E7-DB375ED0454D} = {EC138916-C050-47CC-9E86-EF35E8E69F34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCE34B10-0754-4BFB-8345-ACCEF5496469}
