@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecretManager", "SecretMana
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSqsLambda", "SimpleSqsLambda\src\SimpleSqsLambda\SimpleSqsLambda.csproj", "{60ABADA5-CF84-4C2D-B2E4-CDA3261E6595}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSnsLambda", "SimpleSnsLambda\src\SimpleSnsLambda\SimpleSnsLambda.csproj", "{E620E9B4-459E-400C-9D73-A052C439A323}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{60ABADA5-CF84-4C2D-B2E4-CDA3261E6595}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60ABADA5-CF84-4C2D-B2E4-CDA3261E6595}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60ABADA5-CF84-4C2D-B2E4-CDA3261E6595}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E620E9B4-459E-400C-9D73-A052C439A323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E620E9B4-459E-400C-9D73-A052C439A323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E620E9B4-459E-400C-9D73-A052C439A323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E620E9B4-459E-400C-9D73-A052C439A323}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{A596B58A-C1F4-4D52-99FA-649E895196E8} = {070C02E9-852B-4442-8694-A2555233C0CB}
 		{E88B2B6C-27DB-4289-8F7B-5B4C26FFC0AA} = {3C6A2F56-5023-436A-A963-500B603129D0}
 		{60ABADA5-CF84-4C2D-B2E4-CDA3261E6595} = {EC138916-C050-47CC-9E86-EF35E8E69F34}
+		{E620E9B4-459E-400C-9D73-A052C439A323} = {EC138916-C050-47CC-9E86-EF35E8E69F34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCE34B10-0754-4BFB-8345-ACCEF5496469}
